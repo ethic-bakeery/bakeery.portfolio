@@ -4,7 +4,7 @@ export const LINKS = {
   medium: "https://medium.com/@bakeery",
   telegram: "t.me/b3keery",
   email: "ethic.bakeery@gmail.com",
-  blog: "https://bakeery-blog-seven.vercel.app/"
+  blog: "https://bakeery.vercel.app/"
 };
 
 export const loaderAnimation = [
