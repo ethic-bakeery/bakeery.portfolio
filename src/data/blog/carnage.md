@@ -20,11 +20,10 @@ This report details the analysis of the PCAP file, focusing on uncovering any ma
 
 ### Note:
 - **Do not directly interact with any domains and IP addresses in this challenge**.
----
 
 ### Objective
 - Investigate the packet capture and identify any malicious activities, specifically focusing on suspicious connections made by Eric's workstation.
----
+
 ### Answering the Questions
 
 #### Question: What was the date and time for the first HTTP connection to the malicious IP? (Answer format: yyyy-mm-dd hh:mm:ss)
