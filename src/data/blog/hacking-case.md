@@ -33,51 +33,51 @@ Start Autopsy. Once it opens, navigate to the `Case` tab and create a new case. 
 
 ### Step 1  
 Click on **New Case**  
-![Create](/public/NIST/001.PNG)
+![Create](/NIST/001.PNG)
 
 ---
 
 ### Step 2  
 Give your case a name. In my case, I named it `NistHackingCase`.  
-![Create](/public/NIST/002.PNG)
+![Create](/NIST/002.PNG)
 
 ---
 
 ### Step 3  
 Provide some additional information.  
 > ℹ️ These details are optional but important, especially in real-world investigations where documentation and case tracking are essential.  
-![Create](/public/NIST/003.PNG)
+![Create](/NIST/003.PNG)
 
 ---
 
 ### Step 4  
 Click **Next**, then select the data source type — in this case, choose **Disk Image or VM File**.  
-![Create](/public/NIST/004.PNG)
+![Create](/NIST/004.PNG)
 
 ---
 
 ### Step 5  
 Browse to the location of the disk image you downloaded.  
-![Create](/public/NIST/005.PNG)  
-![Create](/public/NIST/006.PNG)
+![Create](/NIST/005.PNG)  
+![Create](/NIST/006.PNG)
 
 ---
 
 ### Step 6  
 For practice purposes, select all the ingest modules (i.e., check all the boxes). This will ensure that Autopsy returns data from all relevant sources.  
-![Create](/public/NIST/007.PNG)
+![Create](/NIST/007.PNG)
 
 ---
 
 ### Step 7  
 Wait for Autopsy to finish processing the data. This may take a few seconds to a minute, depending on your system.  
-![Create](/public/NIST/008.PNG)
+![Create](/NIST/008.PNG)
 
 ---
 
 ### Dashboard View  
 Once the data is loaded, you will see the Autopsy dashboard like this:  
-![Create](/public/NIST/window.PNG)
+![Create](/NIST/window.PNG)
 
 ---
 ## Analysis and Answers
@@ -99,7 +99,7 @@ We will skip this question, as we were not involved in the acquisition process. 
 Navigate to `Data Artifacts` > `Operating System Information`.  
 From there, we can confirm that the system is running **Windows XP**.
 
-![OS info](/public/NIST/2.PNG)
+![OS info](/NIST/2.PNG)
 
 ---
 
@@ -113,7 +113,7 @@ After converting the timestamp to UTC, the installation date is:
 
 **Thursday, August 19, 2004 – 12:48:27 PM (UTC)**
 
-![Install Date](/public/NIST/3.PNG)
+![Install Date](/NIST/3.PNG)
 
 ---
 
@@ -125,7 +125,7 @@ We check the registry path:
 This key contains information about the configured timezone.  
 There are two control sets (`ControlSet001` and `ControlSet002`), but we use `ControlSet002` as it's marked as the LastKnownGood configuration.
 
-![Timezone](/public/NIST/4.PNG)
+![Timezone](/NIST/4.PNG)
 
 ---
 
@@ -140,7 +140,7 @@ The `RegisteredOwner` field shows the user who registered the OS:
 
 The use of `=` is a redaction technique to avoid search engine indexing.
 
-![Registered Owner](/public/NIST/5.PNG)
+![Registered Owner](/NIST/5.PNG)
 
 ---
 
@@ -151,7 +151,7 @@ To retrieve the computer name, go to:
 
 This is the standard location where Windows stores the assigned computer name.
 
-![Computer Name](/public/NIST/6.PNG)
+![Computer Name](/NIST/6.PNG)
 
 ---
 
@@ -164,7 +164,7 @@ Look for the binary value `ShutdownTime`. Converting the hex value `C4 92 8E 51 
 
 **August 27, 2004 – 10:46:33**
 
-![Shutdown Date](/public/NIST/8.PNG)
+![Shutdown Date](/NIST/8.PNG)
 
 ---
 
@@ -177,7 +177,7 @@ Path to check:
 
 Each subkey under `Names` corresponds to a user account. In this case, we see **5 accounts** listed.
 
-![Users](/public/NIST/9.PNG)
+![Users](/NIST/9.PNG)
 
 ---
 
@@ -187,7 +187,7 @@ To determine the most active user, I examined the `logon count` values under the
 
 `Mr.Evil` had **15 logons**, making him the primary user of the machine.
 
-![Logon Count](/public/NIST/10.PNG)
+![Logon Count](/NIST/10.PNG)
 
 ---
 
@@ -198,7 +198,7 @@ Registry path:
 
 The value `DefaultUserName` holds the name of the last user who logged in.
 
-![Last Logon](/public/NIST/11.PNG)
+![Last Logon](/NIST/11.PNG)
 
 ---
 
@@ -207,7 +207,7 @@ The value `DefaultUserName` holds the name of the last user who logged in.
 A keyword search revealed a file named `irunin.ini`.  
 It contains configuration information linking **Greg Schardt** to the **Mr.Evil** username and confirms administrative privileges.
 
-![irunin.ini](/public/NIST/12.PNG)
+![irunin.ini](/NIST/12.PNG)
 
 ---
 
@@ -224,8 +224,8 @@ Under the subkeys:
 - **0010** → `Compaq WL110 Wireless LAN PC Card`
 - **0001** → `Xircom Ethernet Adapter`
 
-![Interface 1](/public/NIST/13.02.PNG)  
-![Interface 2](/public/NIST/13.beforeExp.PNG)
+![Interface 1](/NIST/13.02.PNG)  
+![Interface 2](/NIST/13.beforeExp.PNG)
 
 ---
 
@@ -233,7 +233,7 @@ Under the subkeys:
 
 Revisiting the `irunin.ini` file, we find both the **IP** and **MAC** addresses listed.
 
-![IP and MAC](/public/NIST/14.PNG)
+![IP and MAC](/NIST/14.PNG)
 
 This file was saved during the setup of a network tool and contains relevant interface details.
 
@@ -249,8 +249,8 @@ An online lookup or OUI database shows this belongs to:
 
 **Vendor:** XIRCOM
 
-![Vendor](/public/NIST/15.02.PNG)
-![MAC Lookup](/public/NIST/15.01.PNG)  
+![Vendor](/NIST/15.02.PNG)
+![MAC Lookup](/NIST/15.01.PNG)  
 
 
 This confirms that the **Xircom NIC** was active during LOOK@LAN installation and setup.
@@ -295,7 +295,7 @@ Honestly, I did something that should **not** be done in a real-world scenario �
 
 I used the search function with the keyword `EmailAddress` to locate any related entries in config files since the Data Artifact section didn't have a direct answer.
 
-![Email Screenshot](/public/NIST/17.PNG)
+![Email Screenshot](/NIST/17.PNG)
 
 ---
 
@@ -303,7 +303,7 @@ I used the search function with the keyword `EmailAddress` to locate any related
 
 Used the keyword `NewsServer` in the search bar. The information appeared in the `AGENT.INI` file.
 
-![News Server](/public/NIST/18.PNG)
+![News Server](/NIST/18.PNG)
 
 ---
 
@@ -312,7 +312,7 @@ Used the keyword `NewsServer` in the search bar. The information appeared in the
 I copied the installed programs and prompted ChatGPT with:  
 **"Among the installed softwares, which one uses NNTP (News Server)? Just list the names of the tools. No explanation."**
 
-![News Server Tools](/public/NIST/19.PNG)
+![News Server Tools](/NIST/19.PNG)
 
 📝 Again, avoid copying forensic data to AI tools in real investigations.
 
@@ -322,7 +322,7 @@ I copied the installed programs and prompted ChatGPT with:
 
 This was tricky until I decided to explore the Outlook directory. That revealed the list of subscribed groups.
 
-![Newsgroups](/public/NIST/20.PNG)
+![Newsgroups](/NIST/20.PNG)
 
 ---
 
@@ -332,7 +332,7 @@ I searched for `mIRC` and found the `mirc.ini` file, which holds user and config
 
 `.ini` files typically store application settings.
 
-![mIRC Settings](/public/NIST/21.PNG)
+![mIRC Settings](/NIST/21.PNG)
 
 ---
 
@@ -340,7 +340,7 @@ I searched for `mIRC` and found the `mirc.ini` file, which holds user and config
 
 Easiest question. Navigated to the mIRC program folder and opened the `/logs` directory. It showed all accessed channels.
 
-![mIRC Logs](/public/NIST/22.PNG)  
+![mIRC Logs](/NIST/22.PNG)  
 📂 Location: `/img_4Dell Latitude CPi.E01/vol_vol2/Program Files/mIRC/logs`
 
 ---
@@ -352,7 +352,7 @@ I followed the path mentioned:
 
 The file was named `interception`.
 
-![Intercepted Traffic](/public/NIST/23.PNG)
+![Intercepted Traffic](/NIST/23.PNG)
 
 ---
 
@@ -361,7 +361,7 @@ The file was named `interception`.
 Opened the intercepted file in a text editor. The headers revealed the device info:  
 📱 **Windows CE (Pocket PC)** - Version 4.20
 
-![Header](/public/NIST/24.PNG)
+![Header](/NIST/24.PNG)
 
 ---
 
@@ -382,7 +382,7 @@ Specifically:
 
 It revealed a Yahoo alert containing the user's email.
 
-![Temp Internet Files](/public/NIST/27.PNG)
+![Temp Internet Files](/NIST/27.PNG)
 
 ---
 
@@ -399,7 +399,7 @@ Accessed the old recycle bin folder (called **RECYCLER** in Windows 2000/XP):
 
 Found **4 executable files (.exe)**.
 
-![Executables in Recycler](/public/NIST/28.PNG)
+![Executables in Recycler](/NIST/28.PNG)
 
 ## Conclusion 
 This forensic investigation revealed several hacking tools, suspicious configurations, and evidence of malicious activity. Through methodical analysis of installed programs, configuration files, and internet artifacts, key insights were uncovered about the user's intent and actions. Such findings highlight the importance of proper digital forensic practices and maintaining chain of custody in real-world scenarios.
