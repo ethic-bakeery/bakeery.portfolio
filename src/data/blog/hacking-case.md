@@ -1,5 +1,5 @@
 ---
-title: "Unmasking Mr. Evil: Forensic Analysis of an Abandoned Hacker's Laptop"
+title: "Forensic Analysis of an Abandoned Hacker's Laptop"
 description: "In this forensic walkthrough, we dive into a real-world scenario involving an abandoned Dell CPi notebook suspected of being used for wireless hacking activities. Using a multi-part disk image, we uncover traces of hacking tools, analyze usage artifacts, and attempt to link the digital evidence to the alleged hacker known as 'Mr. Evil.' Join me as we explore how digital forensics helps trace the footsteps of a cyber intruder and piece together their digital trail"
 pubDate: 2025-04-11
 category: "Digital Forensics"
