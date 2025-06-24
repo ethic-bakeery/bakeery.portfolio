@@ -1,5 +1,5 @@
 export const LINKS = {
-  github: "https://github.com/ethic-bakeery",
+  github: "https://github.com/ethic-bakeery/SOC-WRITE-UPS",
   linkedin: "https://www.linkedin.com/in/abubakar-usman-011115263/",
   medium: "https://medium.com/@bakeery",
   telegram: "t.me/b3keery",
